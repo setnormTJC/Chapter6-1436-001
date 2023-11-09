@@ -25,16 +25,51 @@ int return4(int someInput)
 }
 
 
+double returnLarger(double num1, double num2)
+{
+    if (num1 >= num2)
+    {
+        return num1; 
+    }
+    else //num1 < num2
+    {
+        return num2; 
+    }
+}
 
+//arrays -> returnLargestOfN (arbitray number of elements) 
+double returnLargestOf3(double num1, double num2, double num3)
+{
+    double largestOfAll3; 
+
+    largestOfAll3 = returnLarger(num1,
+                                    returnLarger(num2, num3));
+
+    return largestOfAll3; 
+
+}
 
 
 
 
 int main()
 {
+    double num1, num2, num3; 
+    while (true)
+    {
+        cout << "Enter num1, num2, and num3 (this program will determine which is larger): " << endl;
+        cin >> num1 >> num2 >> num3; //stream extraction operator (>>)
 
-    string result = calculateSquare(5); //ERROR! wrong return type
-    cout << result << endl; 
+        //if(!isdigit(num1))
+
+        double theLargestOne = returnLargestOf3(num1, num2, num3);
+
+        cout << "THe LARGEST of all 3 is: " << theLargestOne << endl;
+
+    }//end while 
+
+    //int result = calculateSquare(5); //ERROR! wrong return type
+    //cout << result << endl; 
     
     //displayHomePage(); //function call! Computer Organization/Architecture
     //sqrt(25) <cmath> 
