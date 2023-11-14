@@ -23,36 +23,64 @@ bool isSameStringLength(string firstString, string secondString)
 
 
 //global variable: 
-string distinctiveName = "Jabberwock";
+//string distinctiveName = "Jabberwock";
 
 void printGreeting()
 {
-    //string distinctiveName = "Jabberwock";
+    string distinctiveName = "Jabberwock";
 
     cout << "Hello, " << distinctiveName << endl; 
 }
 
+int demoPassByValue(int a) //passing an argument (input) BY VALUE 
+{
+    return a + 2; 
+}
+
+int demoPassByREFERENCE(int& a)
+{
+    return a + 2; 
+}
+
+void incrementByValue(int value)
+{
+    value++;
+}
+void incrementByReference(int& value)
+{
+    value++;
+}
+
 int main()
 {
+    //distinctiveName 
     //cout << distinctiveName << endl; 
     //string s1 = "abcdefgh"; 
     //string s2 = "123456789";
     //
     //cout << std::boolalpha << isSameStringLength(s1, s2) << endl; 
 
-    int a = 5; 
-    int& aliasOfA = a; //REFERENCE variable 
-    int copyOfA = a; 
+    //if(a && b)
 
-    cout << "a: " << a << 
-        "\tAlias of a: " << aliasOfA <<
-        "\tCopy of a: " << copyOfA << endl;
+
+    int a = 5; 
     
-    a = 62; 
-    cout << "AFTER updating a (the original): " << endl; 
-    cout << "a: " << a <<
-        "\tAlias of a: " << aliasOfA <<
-        "\tCopy of a: " << copyOfA << endl;
+    incrementByValue(a);
+    cout << a << endl; // prints 5
+    incrementByReference(a);
+    cout << a << endl; // prints 6
+    //int& aliasOfA = a; //REFERENCE variable 
+    //int copyOfA = a; 
+
+    //cout << "a: " << a << 
+    //    "\tAlias of a: " << aliasOfA <<
+    //    "\tCopy of a: " << copyOfA << endl;
+    //
+    //a = 62; 
+    //cout << "AFTER updating a (the original): " << endl; 
+    //cout << "a: " << a <<
+    //    "\tAlias of a: " << aliasOfA <<
+    //    "\tCopy of a: " << copyOfA << endl;
 
 
         //if (a < 0 && a > 10)
